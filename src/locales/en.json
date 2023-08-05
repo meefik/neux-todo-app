@@ -1,0 +1,27 @@
+{
+  "languages": {
+    "en": "Eng",
+    "ru": "Рус"
+  },
+  "todo": {
+    "title": "To Do",
+    "input": "Enter your task...",
+    "mark_all": "Mark all as complete",
+    "total": "Total tasks: %{count}",
+    "filter": {
+      "all": "All",
+      "active": "Active",
+      "completed": "Completed"
+    }
+  },
+  "notfound": {
+    "title": "Not found",
+    "code": "404",
+    "message": "Page not found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
+    "back": "Go back home"
+  },
+  "footer": {
+    "text": "Powered by NEUX"
+  }
+}
