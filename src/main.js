@@ -1,5 +1,4 @@
 import { createView } from 'neux';
-import './index.css';
 import l10n from './l10n';
 import router from './router';
 import Todo from './views/todo';

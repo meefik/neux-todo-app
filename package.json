@@ -1,7 +1,7 @@
 {
   "name": "neux-todo-app",
   "version": "0.1.0",
-  "description": "To Do app with NEUX.",
+  "description": "To-Do app with NEUX.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,7 +16,7 @@
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
-    "neux": "^0.3.0",
+    "neux": "^0.3.1",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.8"
