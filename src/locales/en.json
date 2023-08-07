@@ -5,6 +5,7 @@
   },
   "todo": {
     "title": "To Do",
+    "newtask": "New task",
     "input": "Enter your task...",
     "mark_all": "Mark all as complete",
     "total": "Total tasks: %{count}",
@@ -17,9 +18,9 @@
   "notfound": {
     "title": "Not found",
     "code": "404",
-    "message": "Page not found",
+    "message": "Something's missing.",
     "description": "Sorry, we couldn't find the page you're looking for.",
-    "back": "Go back home"
+    "back": "Back to home"
   },
   "footer": {
     "text": "Powered by NEUX"

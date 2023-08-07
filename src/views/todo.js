@@ -4,37 +4,39 @@ import router from '../router';
 
 import circleXmarkIcon from '@svg-icons/fa-solid/circle-xmark.svg?raw';
 
-function syncer (newv, oldv, diff) {
+const state = createState({
+  list: []
+});
+const syncer = (newv, oldv, diff) => {
   if (!oldv) {
     return JSON.parse(localStorage.getItem('todos') || '[]');
   } else {
     localStorage.setItem('todos', JSON.stringify(newv));
   }
   return newv;
-}
+};
+const sync = createSync(state.list, syncer, { slippage: 100 });
+state.list.$$on('*', () => sync());
 
-export default function Todo () {
-  const state = createState({
-    list: []
-  });
-  const sync = createSync(state.list, syncer, { slippage: 100 });
+export default function () {
   sync();
-  state.list.$$on('*', () => sync());
   return {
+    tagName: 'section',
     children: [{
       classList: ['relative'],
       children: [{
         tagName: 'label',
         classList: ['absolute', '-top-2', 'left-2', 'px-1',
-          'inline-block', 'bg-white', 'text-xs', 'text-gray-900'],
+          'inline-block', 'bg-white', 'text-xs', 'text-gray-900', 'dark:bg-gray-900',
+          'dark:text-white'],
         textContent: () => l10n.t('todo.newtask')
       }, {
         tagName: 'input',
         placeholder: () => l10n.t('todo.input'),
         autofocus: true,
-        classList: ['block', 'w-96', 'py-1.5', 'px-3', 'rounded-md', 'border-0', 'text-gray-900',
+        classList: ['block', 'w-full', 'py-1.5', 'px-3', 'rounded-md', 'border-0', 'text-gray-900',
           'ring-1', 'ring-inset', 'ring-gray-400', 'placeholder:text-gray-400', 'focus:ring-indigo-400',
-          'outline-0'],
+          'outline-0', 'dark:bg-gray-900', 'dark:text-white'],
         on: {
           keyup: (e) => {
             if (e.keyCode === 13) {
@@ -65,7 +67,7 @@ export default function Todo () {
         }
       }, {
         tagName: 'label',
-        classList: ['font-medium'],
+        classList: ['font-medium', 'dark:text-white'],
         attributes: {
           for: 'toggle_all'
         },
@@ -79,13 +81,13 @@ export default function Todo () {
           return {
             tagName: 'a',
             href: `#${router.path}?filter=${item}`,
-            classList: ['first:rounded-l-md', 'last:rounded-r-md', 'px-3', 'py-2', 'text-sm',
-              'font-semibold', 'ring-1', 'ring-inset', 'ring-gray-300', 'hover:bg-gray-50'],
-            style: {
-              color: () => {
-                const filter = router.params.$filter;
-                return (!filter && item === 'all') || filter === item ? 'red' : '';
-              }
+            classList: () => {
+              const filter = router.params.$filter;
+              const active = (!filter && item === 'all') || filter === item;
+              return ['first:rounded-l-md', 'last:rounded-r-md', 'px-3', 'py-2', 'text-sm',
+                'font-semibold', 'ring-1', 'ring-inset', 'ring-gray-300', 'hover:bg-gray-200',
+                'dark:text-white', 'dark:hover:bg-gray-600',
+                active && 'bg-gray-200', active && 'dark:bg-gray-600'];
             },
             textContent: () => l10n.t(`todo.filter.${item}`)
           };
@@ -103,7 +105,7 @@ export default function Todo () {
           }
           return {
             tagName: 'li',
-            classList: ['flex', 'gap-x-3', 'items-center', 'py-2'],
+            classList: ['flex', 'gap-x-3', 'items-center', 'py-2', 'dark:text-white'],
             children: [{
               tagName: 'input',
               type: 'checkbox',
@@ -175,7 +177,7 @@ export default function Todo () {
         });
       }
     }, {
-      classList: ['my-5', 'font-semibold'],
+      classList: ['my-5', 'font-semibold', 'dark:text-white'],
       textContent: () => l10n.t('todo.total', { count: state.list.$length })
     }]
   };

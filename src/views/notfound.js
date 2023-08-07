@@ -2,30 +2,33 @@ import l10n from '../l10n';
 
 export default function () {
   return {
-    classList: ['grid', 'min-h-full', 'place-items-center', 'bg-white',
-      'px-6', 'py-24', 'sm:py-32', 'lg:px-8'],
+    tagName: 'section',
+    classList: ['bg-white', 'dark:bg-gray-900'],
     children: [{
-      classList: ['text-center'],
+      classList: ['py-8', 'px-4', 'mx-auto', 'max-w-screen-xl', 'lg:py-16', 'lg:px-6'],
       children: [{
-        tagName: 'p',
-        classList: ['text-base', 'font-semibold', 'text-indigo-600'],
-        textContent: () => l10n.t('notfound.code')
-      }, {
-        tagName: 'h1',
-        classList: ['mt-4', 'text-3xl', 'font-bold', 'tracking-tight', 'text-gray-900', 'sm:text-5xl'],
-        textContent: () => l10n.t('notfound.message')
-      }, {
-        tagName: 'p',
-        classList: ['mt-6', 'text-base', 'leading-7', 'text-gray-600'],
-        textContent: () => l10n.t('notfound.description')
-      }, {
-        classList: ['mt-10', 'flex', 'items-center', 'justify-center', 'gap-x-6'],
+        classList: ['mx-auto', 'max-w-screen-sm', 'text-center'],
         children: [{
+          tagName: 'h1',
+          classList: ['mb-4', 'text-7xl', 'tracking-tight', 'font-extrabold',
+            'lg:text-9xl', 'text-indigo-600', 'dark:text-indigo-500'],
+          textContent: () => l10n.t('notfound.code')
+        }, {
+          tagName: 'p',
+          classList: ['mb-4', 'text-3xl', 'tracking-tight', 'font-bold',
+            'text-gray-900', 'md:text-4xl', 'dark:text-white'],
+          textContent: () => l10n.t('notfound.message')
+        }, {
+          tagName: 'p',
+          classList: ['mb-4', 'text-lg', 'font-light', 'text-gray-500', 'dark:text-gray-400'],
+          textContent: () => l10n.t('notfound.description')
+        }, {
           tagName: 'a',
           href: '#',
-          classList: ['rounded-md', 'bg-indigo-600', 'px-3.5', 'py-2.5', 'text-sm', 'font-semibold',
-            'text-white', 'shadow-sm', 'hover:bg-indigo-500', 'focus-visible:outline',
-            'focus-visible:outline-2', 'focus-visible:outline-offset-2', 'focus-visible:outline-indigo-600'],
+          classList: ['inline-flex', 'text-white', 'bg-indigo-600', 'hover:bg-indigo-800',
+            'focus:ring-4', 'focus:outline-none', 'focus:ring-indigo-300', 'font-medium',
+            'rounded-lg', 'text-sm', 'px-5', 'py-2.5', 'text-center',
+            'dark:focus:ring-indigo-900', 'my-4'],
           textContent: () => l10n.t('notfound.back')
         }]
       }]
