@@ -5,7 +5,7 @@ export default function () {
     tagName: 'section',
     classList: ['bg-white', 'dark:bg-gray-900'],
     children: [{
-      classList: ['py-8', 'px-4', 'mx-auto', 'max-w-screen-xl', 'lg:py-16', 'lg:px-6'],
+      classList: ['py-2', 'px-4', 'mx-auto', 'max-w-screen-xl', 'lg:py-16', 'lg:px-6'],
       children: [{
         classList: ['mx-auto', 'max-w-screen-sm', 'text-center'],
         children: [{

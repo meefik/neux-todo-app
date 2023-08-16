@@ -10,7 +10,7 @@ const views = {
 };
 
 createView({
-  classList: ['container', 'mx-auto', 'px-4'],
+  classList: ['mx-auto', 'max-w-lg', 'px-4'],
   children: [{
     view: Header
   }, {
