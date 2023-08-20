@@ -56,7 +56,7 @@ export default function () {
             'dark:bg-gray-700', 'dark:hover:bg-gray-600', 'dark:focus:ring-gray-700', 'w-20',
             'dark:text-white', 'dark:border-gray-600'],
           children: [{
-            textContent: () => l10n.t(`languages.${l10n.$lang}`, 'en')
+            textContent: () => l10n.t('language')
           }, {
             view: chevronDownIcon,
             classList: ['w-2.5', 'h-2.5', 'ml-2.5']
@@ -69,14 +69,14 @@ export default function () {
           children: [{
             tagName: 'ul',
             classList: ['py-2', 'text-sm', 'dark:text-white'],
-            children: Object.keys(l10n.t('languages', 'en')).map(lang => {
+            children: l10n.locales.map(lang => {
               return {
                 tagName: 'li',
                 children: [{
                   tagName: 'button',
                   classList: ['inline-flex', 'w-full', 'px-4', 'py-2', 'text-sm', 'hover:bg-gray-100',
                     'dark:text-white', 'dark:hover:bg-gray-600', 'dark:hover:text-white'],
-                  textContent: l10n.t(`languages.${lang}`, 'en'),
+                  textContent: l10n.t('language', lang),
                   on: {
                     click () {
                       l10n.lang = lang;

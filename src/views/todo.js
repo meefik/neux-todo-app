@@ -82,7 +82,7 @@ export default function () {
             tagName: 'a',
             href: `#${router.path}?filter=${item}`,
             classList: () => {
-              const filter = router.params.$filter;
+              const filter = router.query.$filter;
               const active = (!filter && item === 'all') || filter === item;
               return ['first:rounded-l-md', 'last:rounded-r-md', 'px-3', 'py-2', 'text-sm',
                 'font-semibold', 'ring-1', 'ring-inset', 'ring-gray-300', 'hover:bg-gray-200',
@@ -97,7 +97,7 @@ export default function () {
       tagName: 'ul',
       classList: ['mt-4', 'divide-y', 'divide-gray-200', 'border-b', 'border-t', 'border-gray-200'],
       children: () => {
-        const filter = router.params.$filter;
+        const filter = router.query.$filter;
         return state.list.$$each(item => {
           if (filter && filter !== 'all') {
             if (item.checked && filter !== 'completed') return;

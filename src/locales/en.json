@@ -1,8 +1,5 @@
 {
-  "languages": {
-    "en": "Eng",
-    "ru": "Рус"
-  },
+  "language": "Eng",
   "todo": {
     "title": "To Do",
     "newtask": "New task",

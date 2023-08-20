@@ -23,4 +23,4 @@ createView({
   }, {
     view: Footer
   }]
-}, document.body);
+}, { target: document.body });
