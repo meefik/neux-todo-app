@@ -7,7 +7,7 @@ import circleXmarkIcon from '@svg-icons/fa-solid/circle-xmark.svg?raw';
 const state = createState({
   list: []
 });
-const syncer = (newv, oldv, diff) => {
+const syncer = (newv, oldv) => {
   if (!oldv) {
     return JSON.parse(localStorage.getItem('todos') || '[]');
   } else {

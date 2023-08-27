@@ -17,8 +17,9 @@ createView({
     tagName: 'main',
     classList: ['py-6'],
     children: () => {
-      const View = views[router.$path];
-      return View || NotFound;
+      return {
+        view: views[router.$path] || NotFound
+      };
     }
   }, {
     view: Footer
