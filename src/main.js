@@ -10,18 +10,20 @@ const views = {
 };
 
 createView({
-  classList: ['mx-auto', 'max-w-lg', 'px-4'],
-  children: [{
-    view: Header
-  }, {
+  classList: [
+    'mx-auto',
+    'max-w-lg',
+    'px-4'
+  ],
+  children: [Header(), {
     tagName: 'main',
-    classList: ['py-6'],
+    classList: [
+      'py-6'
+    ],
     children: () => {
-      return {
-        view: views[router.$path] || NotFound
-      };
+      const View = views[router.$path];
+      const view = View ? View() : NotFound();
+      return [view];
     }
-  }, {
-    view: Footer
-  }]
+  }, Footer()]
 }, { target: document.body });
