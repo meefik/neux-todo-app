@@ -130,7 +130,6 @@ export default function () {
             classList: () => {
               const filter = router.query.$filter;
               const active = (!filter && item === 'all') || filter === item;
-              console.log(filter, item, active);
               return [
                 'first:rounded-l-md',
                 'last:rounded-r-md',
@@ -169,7 +168,6 @@ export default function () {
             if (item.checked && filter !== 'completed') return;
             if (!item.checked && filter !== 'active') return;
           }
-          console.log('changed');
           return {
             tagName: 'li',
             classList: [
