@@ -61,7 +61,7 @@ export default function () {
         ],
         children: () => {
           return [{
-            node: state.$dark ? moonIcon : sunIcon,
+            outerHTML: state.$dark ? moonIcon : sunIcon,
             classList: [
               'w-4',
               'h-4'
@@ -111,7 +111,7 @@ export default function () {
           children: [{
             textContent: () => l10n.t('language')
           }, {
-            node: chevronDownIcon,
+            outerHTML: chevronDownIcon,
             classList: [
               'w-2.5',
               'h-2.5',

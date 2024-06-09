@@ -271,7 +271,7 @@ export default function () {
                 }
               },
               children: [{
-                node: circleXmarkIcon,
+                outerHTML: circleXmarkIcon,
                 classList: [
                   'w-4',
                   'h-4',

@@ -1,6 +1,6 @@
 {
   "name": "neux-todo-app",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "To-Do app with NEUX and Tailwind CSS.",
   "type": "module",
   "scripts": {
@@ -11,12 +11,12 @@
   "devDependencies": {
     "@svg-icons/fa-solid": "^1.87.0",
     "autoprefixer": "^10.4.19",
-    "@eslint/js": "^9.3.0",
+    "@eslint/js": "^9.4.0",
     "@stylistic/eslint-plugin-js": "^2.1.0",
-    "eslint": "^9.3.0",
-    "neux": "^0.7.0",
+    "eslint": "^9.4.0",
+    "neux": "^0.8.0",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "vite": "^5.2.12"
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.2.13"
   }
 }
